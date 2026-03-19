@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Characters — The Edenverse</title>
+  <meta name="description" content="Full character profiles for the Eden Philanthropic Foundation Series — Eva Eden, Ado Eden, Cole, Sullivan, Bors, Mia O'Shea, Gabriel, and Mac." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .char-full-card {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+    .char-full-card:hover { border-color: var(--gold-dark); }
+
+    .char-full-inner {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+    }
+
+    .char-full-portrait {
+      background: linear-gradient(160deg, #1a1208 0%, #0d0d0d 100%);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .char-full-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .char-initials {
+      font-family: var(--font-head);
+      font-size: 4rem;
+      color: var(--gold-dark);
+      opacity: 0.35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .char-full-body {
+      padding: 2rem;
+    }
+
+    .char-full-body .char-name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .char-full-body h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .char-alias {
+      font-family: var(--font-sub);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .char-meta-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 0.8rem 0 1.2rem;
+      padding: 0.8rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .char-meta-item {
+      font-family: var(--font-head);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .char-meta-item span {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.82rem;
+      margin-top: 0.2rem;
+      font-family: var(--font-body);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .char-voice-note {
+      background: rgba(201,168,76,0.04);
+      border-left: 2px solid var(--gold-dark);
+      padding: 0.8rem 1rem;
+      margin-top: 1.2rem;
+      font-family: var(--font-sub);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .section-divider-label {
+      text-align: center;
+      margin: 3rem 0 2rem;
+      position: relative;
+    }
+
+    .section-divider-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-divider-label span {
+      position: relative;
+      z-index: 1;
+      background: var(--deep-black);
+      padding: 0 1.5rem;
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      .char-full-inner { grid-template-columns: 1fr; }
+      .char-full-portrait { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">The Edenverse <span>/ EPF Series</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">The Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html" class="active">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">The People of the Edenverse</p>
+      <h1>Characters</h1>
+      <div class="divider-sm"></div>
+      <p>Immortals and operatives. Warriors and analysts. Each shaped by centuries of conflict, loyalty, and the particular weight of knowing too much about what the world really is.</p>
+    </div>
+  </section>
+
+  <!-- ── CHARACTERS ── -->
+  <section class="section">
+    <div class="container">
+
+      <!-- FOUNDATION INNER CIRCLE label -->
+      <div class="section-divider-label reveal">
+        <span>The Eden Foundation — Inner Circle</span>
+      </div>
+
+      <!-- ── EVA EDEN ── -->
+      <div class="char-full-card reveal">
+        <div class="char-full-inner">
+          <div class="char-full-portrait" style="position:relative;">
+            <img src="images/char-eva.jpg" alt="Evangeline Eva Eden — The Matriarch" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;" />
+            <span class="char-affiliation" style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);font-family:var(--font-head);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);z-index:2;">Eden Foundation</span>
+          </div>
+          <div class="char-full-body">
+            <div class="char-name-line">
+              <h2>Evangeline "Eva" Eden</h2>
+              <span class="char-alias">The Matriarch</span>
+            </div>
+            <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.9rem;color:var(--red-light);margin-bottom:0.5rem;">Pre-Pangean Alpha · Co-Founder, Eden Philanthropic Foundation</p>
+            <div class="char-meta-row">
+              <div class="char-meta-item">Classification<span>Pre-Pangean Alpha</span></div>
+              <div class="char-meta-item">Age<span>Over 2,000 years</span></div>
+              <div class="char-meta-item">Role<span>Healer / Emotional Core</span></div>
+              <div class="char-meta-item">Voice<span>Warm authority with Italian endearments</span></div>
+            </div>
+            <p style="font-size:0.95rem;color:var(--text-muted);">Eva Eden is the emotional core of the Foundation and the series itself. Her public persona radiates warmth through a calm, gentle presence that can carry through vast spaces. She is universally beloved — and she uses that love as both shield and instrument.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);">In private, with Ado, her voice transforms into playful, loving banter punctuated by Italian endearments. When threatened or protecting others, it sharpens into fierce command. Her telepathic bond with Ado — forged over two millennia — is the deepest relationship in the Edenverse. She is not soft. She is warm, which is harder to be and far more dangerous to oppose.</p>
+            <div class="char-voice-note">
+              Voice Note: Always uses Italian terms of endearment with Ado ("cattivo ragazzo," "Ti amo, mio caro"). Her voice shifts dramatically between public warmth, private playfulness, and protective sharpness. Her mental communications are her most honest self.
+            </div>
+            <div class="char-tags" style="margin-top:1rem;">
+              <span class="tag tag-gold">Immortal</span>
+              <span class="tag tag-gold">Healer</span>
+              <span class="tag">Pre-Pangean Alpha</span>
+              <span class="tag">Telepathic Bond</span>
+              <span class="tag tag-red">200-Year Separation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ADO EDEN ── -->
+      <div class="char-full-card reveal">
+        <div class="char-full-inner">
+          <div class="char-full-portrait" style="position:relative;">
+            <img src="images/char-ado.png" alt="Adamocles Ado Eden — The Patriarch" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;" />
+            <span class="char-affiliation" style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);font-family:var(--font-head);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);z-index:2;">Eden Foundation</span>
+          </div>
+          <div class="char-full-body">
+            <div class="char-name-line">
+              <h2>Adamocles "Ado" Eden</h2>
+              <span class="char-alias">The Patriarch</span>
+            </div>
+            <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.9rem;color:var(--red-light);margin-bottom:0.5rem;">Pre-Pangean Alpha · Co-Founder, Eden Philanthropic Foundation</p>
+            <div class="char-meta-row">
+              <div class="char-meta-item">Classification<span>Pre-Pangean Alpha</span></div>
+              <div class="char-meta-item">Age<span>Over 2,000 years</span></div>
+              <div class="char-meta-item">Role<span>Tactical / Strategic Command</span></div>
+              <div class="char-meta-item">Voice<span>Low rumble, Latin phrases, ancient gravitas</span></div>
+            </div>
+            <p style="font-size:0.95rem;color:var(--text-muted);">Adamocles Eden is the embodiment of ancient wisdom and protective strength. His speech is economical — a man who has lived long enough to know that most words are wasted. He communicates primarily through mental bonds and quiet gestures, and when he does speak formally, his voice carries the weight of the centuries he has walked through.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);">His accent is described as deep English with a North African tinge acquired over centuries of living. He frequently uses Latin phrases in formal speech, and his verbal interactions often trail off mid-sentence, allowing Eva to complete his thoughts — a testament to a bond that runs deeper than language.</p>
+            <div class="char-voice-note">
+              Voice Note: Minimal verbal communication. Relies on mental bonds. Uses Latin ("Quid pro quo," "Nihil aliud"). Often speaks in incomplete sentences that Eva finishes. Calm even under extreme stress. Deep English with North African influence.
+            </div>
+            <div class="char-tags" style="margin-top:1rem;">
+              <span class="tag tag-gold">Immortal</span>
+              <span class="tag tag-gold">Warrior</span>
+              <span class="tag">Pre-Pangean Alpha</span>
+              <span class="tag">Latin Phrases</span>
+              <span class="tag tag-red">Telepathic Bond</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIELD TEAM label -->
+      <div class="section-divider-label reveal">
+        <span>Field Operations</span>
+      </div>
+
+      <!-- ── BENJAMIN COLE ── -->
+      <div class="char-full-card reveal">
+        <div class="char-full-inner">
+          <div class="char-full-portrait" style="position:relative;">
+            <img src="images/char-cole.png" alt="Benjamin Cole — SAS Operative" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;" />
+            <span class="char-affiliation" style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);font-family:var(--font-head);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);z-index:2;">Field Operations</span>
+          </div>
+          <div class="char-full-body">
+            <div class="char-name-line">
+              <h2>Benjamin Cole</h2>
+              <span class="char-alias">"Queenie's Lad"</span>
+            </div>
+            <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.9rem;color:var(--red-light);margin-bottom:0.5rem;">Former SAS · Foundation Field Operative</p>
+            <div class="char-meta-row">
+              <div class="char-meta-item">Background<span>British SAS Veteran</span></div>
+              <div class="char-meta-item">Accent<span>London East End (Cockney)</span></div>
+              <div class="char-meta-item">Role<span>Field Combat / Redemption Arc</span></div>
+              <div class="char-meta-item">Arc<span>Sobriety &amp; Second Chances</span></div>
+            </div>
+            <p style="font-size:0.95rem;color:var(--text-muted);">Cole is the series' most immediately readable character and one of its most emotionally complex. His thick Cockney accent and dark, deflecting humor are front-facing armor — and like all good armor, they were forged from something that needed protecting. A former SAS operative carrying the weight of a past betrayal, he found his way to the Foundation through Eva's particular brand of obstinate belief in the redeemable.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);">His sobriety is central to his arc — not as a resolved backstory element, but as an ongoing practice of choosing to be someone different than who the worst moments of his life made him. He is irreverent in crisis, fiercely loyal when it matters, and will never, under any circumstances, stop talking.</p>
+            <div class="char-voice-note">
+              Voice Note: Thick Cockney MUST remain consistent throughout all appearances. Dark humor is a defense mechanism. Uses "blimey," "cor," "right then" as emotional tells. His seriousness, when it breaks through, carries enormous weight precisely because it is rare.
+            </div>
+            <div class="char-tags" style="margin-top:1rem;">
+              <span class="tag tag-gold">SAS Veteran</span>
+              <span class="tag">Cockney</span>
+              <span class="tag tag-red">Past Betrayal</span>
+              <span class="tag">Redemption Arc</span>
+              <span class="tag">Sobriety</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── JUDITH SULLIVAN ── -->
+      <div class="char-full-card reveal">
+        <div class="char-full-inner">
+          <div class="char-full-portrait" style="position:relative;">
+            <img src="images/char-sullivan.png" alt="Judith Sullivan — Deputy Director" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;" />
+            <span class="char-affiliation" style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);font-family:var(--font-head);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);z-index:2;">Intelligence Division</span>
+          </div>
+          <div class="char-full-body">
+            <div class="char-name-line">
+              <h2>Judith Sullivan</h2>
+              <span class="char-alias">Deputy Director</span>
+            </div>
+            <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.9rem;color:var(--red-light);margin-bottom:0.5rem;">Foundation Intelligence · Cybernetic Arm · Traumatized Analyst</p>
+            <div class="char-meta-row">
+              <div class="char-meta-item">Role<span>Deputy Director, Intelligence</span></div>
+              <div class="char-meta-item">Physical<span>Cybernetic prosthetic arm</span></div>
+              <div class="char-meta-item">Voice<span>Clipped, professional, mission-focused</span></div>
+              <div class="char-meta-item">Hidden Self<span>Maternal warmth (Ally)</span></div>
+            </div>
+            <p style="font-size:0.95rem;color:var(--text-muted);">Sullivan is professional competence as armor. Her communication is clipped, her delivery sharp, and her focus relentlessly operational. The cybernetic arm — its servos whirring under stress, her fingers drumming consoles in moments of anxiety — is a constant physical tell that betrays the interior life she works hard to keep out of the room.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);">She has lost teams. She carries those losses without dramatizing them. Her maternal warmth emerges almost exclusively with Ally — soft nicknames, a gentler register, a brief visibility of who she is when she is not at war. Everyone else gets the Deputy Director. Ally gets Judith.</p>
+            <div class="char-voice-note">
+              Voice Note: Professional dialogue is always clipped and mission-focused. Physical nervous habits accompany tense moments. Maternal voice emerges only with Ally. Commands through controlled authority rather than charisma. Past trauma is present in tone, not words.
+            </div>
+            <div class="char-tags" style="margin-top:1rem;">
+              <span class="tag tag-gold">Deputy Director</span>
+              <span class="tag">Cybernetic Arm</span>
+              <span class="tag tag-red">Team Loss Trauma</span>
+              <span class="tag">Intelligence</span>
+              <span class="tag">Analyst</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BORS ADAMSEN ── -->
+      <div class="char-full-card reveal">
+        <div class="char-full-inner">
+          <div class="char-full-portrait" style="position:relative;">
+            <img src="images/char-bors.jpeg" alt="Bors Adamsen — Norwegian Warrior" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;" />
+            <span class="char-affiliation" style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);font-family:var(--font-head);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);z-index:2;">Combat Division</span>
+          </div>
+          <div class="char-full-body">
+            <div class="char-name-line">
+              <h2>Bors Adamsen</h2>
+              <span class="char-alias">The Craftsman-Warrior</span>
+            </div>
+            <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.9rem;color:var(--red-light);margin-bottom:0.5rem;">Norwegian Warrior · Raised by Eva and Ado</p>
+            <div class="char-meta-row">
+              <div class="char-meta-item">Heritage<span>Norwegian</span></div>
+              <div class="char-meta-item">Raised By<span>Eva &amp; Ado (from age 1)</span></div>
+              <div class="char-meta-item">Voice<span>Thick Norwegian accent</span></div>
+              <div class="char-meta-item">Role<span>Combat / Craftsman</span></div>
+            </div>
+            <p style="font-size:0.95rem;color:var(--text-muted);">Bors was orphaned before he could speak and raised by Eva and Ado as their own. He calls them Ma and Far — Mother and Father — and means it in every sense that word carries. He is the only member of the team who has known the Edens his entire life, which makes him simultaneously the most loyal and the most exposed to what it costs to love two people who cannot die while you are mortal.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);">He is a warrior with a craftsman's sensibility — methodical, precise, built to last. His Norwegian accent is thick and musical. His humor is dryer than the others', delivered with minimal inflection and maximum effect. He does not perform his loyalty. He simply lives it.</p>
+            <div class="char-voice-note">
+              Voice Note: Thick Norwegian accent maintained throughout. His relationship to Ma (Eva) and Far (Ado) is the core of his emotional register. Measured speech. The weight of being mortal and beloved by immortals lives in the spaces between his words.
+            </div>
+            <div class="char-tags" style="margin-top:1rem;">
+              <span class="tag tag-gold">Warrior</span>
+              <span class="tag tag-gold">Craftsman</span>
+              <span class="tag">Norwegian</span>
+              <span class="tag tag-red">Orphaned</span>
+              <span class="tag">Raised by Edens</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPPORTING label -->
+      <div class="section-divider-label reveal">
+        <span>Supporting Cast</span>
+      </div>
+
+      <!-- ── SUPPORTING CHARACTERS GRID ── -->
+      <div class="characters-grid reveal">
+
+        <!-- MIA O'SHEA -->
+        <div class="char-card">
+          <div class="char-portrait">
+            <span class="char-portrait-placeholder">MO</span>
+            <span class="char-affiliation">Field Team</span>
+          </div>
+          <div class="char-info">
+            <h3>Mia O'Shea</h3>
+            <p class="char-title">Foundation Operative</p>
+            <p class="char-bio">Mia operates in the spaces where precision matters more than firepower. Stationed at Foundation HQ in New York, she appears in the anthology <em>The Travelers</em> alongside Cole — two people who keep the machinery running while the Edens are in the field. Quick-witted and difficult to fool.</p>
+            <div class="char-tags">
+              <span class="tag">Field Operative</span>
+              <span class="tag tag-gold">Foundation HQ</span>
+              <span class="tag">New York</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAC -->
+        <div class="char-card">
+          <div class="char-portrait">
+            <span class="char-portrait-placeholder">DM</span>
+            <span class="char-affiliation">Field Operations</span>
+          </div>
+          <div class="char-info">
+            <h3>Mac</h3>
+            <p class="char-title">Dillon Arthur MacMillan · Former CIA</p>
+            <p class="char-bio">Mac came into the Foundation sideways — through a harrowing Night Lords encounter in Prague that Eva witnessed firsthand. Former CIA. His first-hand knowledge of the vampire operations and supernatural underground made him immediately valuable. Eva saw something else in him worth the risk of recruitment.</p>
+            <div class="char-tags">
+              <span class="tag tag-red">Former CIA</span>
+              <span class="tag">Prague Entry</span>
+              <span class="tag tag-gold">Eva's Recruit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KIT MAKER STYLEZ -->
+        <div class="char-card">
+          <div class="char-portrait">
+            <span class="char-portrait-placeholder">KS</span>
+            <span class="char-affiliation">Foundation Tech</span>
+          </div>
+          <div class="char-info">
+            <h3>Kit Maker Stylez</h3>
+            <p class="char-title">Foundation Technology Lead</p>
+            <p class="char-bio">The Foundation's technology genius. Responsible for Sullivan's cybernetic arm, the MAPC, and the advanced gear that keeps the field team functional against threats that no conventional military has prepared for. Initially shy, Kit found his place in the Foundation family completely — and the Foundation found its technical backbone in him.</p>
+            <div class="char-tags">
+              <span class="tag tag-gold">Tech Genius</span>
+              <span class="tag">Cybernetics</span>
+              <span class="tag">Foundation Family</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- GABRIEL -->
+        <div class="char-card">
+          <div class="char-portrait" style="position:relative;">
+            <img src="images/char-gabriel.png" alt="Gabriel Echevarra Castillo" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+            <span class="char-affiliation">Field Team</span>
+          </div>
+          <div class="char-info">
+            <h3>Gabriel Echevarra Castillo</h3>
+            <p class="char-title">Tactical Operative</p>
+            <p class="char-bio">Gabriel brings a complicated past and uncompromising discipline to every operation. His tactical precision is matched by an emotional depth he rarely allows to surface — but when it does, it changes the room.</p>
+            <div class="char-tags">
+              <span class="tag">Tactical</span>
+              <span class="tag tag-red">Complex Past</span>
+              <span class="tag">Operative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANTONOV -->
+        <div class="char-card">
+          <div class="char-portrait">
+            <span class="char-portrait-placeholder">AP</span>
+            <span class="char-affiliation">Foundation Ally</span>
+          </div>
+          <div class="char-info">
+            <h3>Antonov "AP" Postanovsky</h3>
+            <p class="char-title">Retired Staff Sergeant · WWII Veteran</p>
+            <p class="char-bio">One of the oldest human allies the Foundation has. Antonov's connection to Ado and Eva stretches back to World War II — a relationship that predates the Foundation's modern form and provides historical context and intelligence that no active field operative can match. He represents what the Foundation ultimately exists to protect: people who keep going.</p>
+            <div class="char-tags">
+              <span class="tag tag-gold">Old Alliance</span>
+              <span class="tag">WWII</span>
+              <span class="tag">Human Ally</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NILSA & ALLY -->
+        <div class="char-card">
+          <div class="char-portrait">
+            <span class="char-portrait-placeholder">N·A</span>
+            <span class="char-affiliation">Foundation Family</span>
+          </div>
+          <div class="char-info">
+            <h3>Nilsa &amp; Allesandra</h3>
+            <p class="char-title">Nilsa Billkesdatter · Ally Sullivan</p>
+            <p class="char-bio">Nilsa — Bors's wife, six months pregnant when the series' events escalate — is what Bors fights to return to. Allesandra ("Ally") — Sullivan's daughter — is what Sullivan fights to protect. These two women are the human heart behind two of the series' most formidable operatives. Eva's maternal warmth reaches both of them directly.</p>
+            <div class="char-tags">
+              <span class="tag">Bors's Wife</span>
+              <span class="tag">Sullivan's Daughter</span>
+              <span class="tag tag-gold">Civilian Heart</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;" class="reveal">
+        <a href="lore.html" class="btn btn-outline">Explore the World Lore</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        The Edenverse
+        <p>Eden Philanthropic Foundation Series</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; Yenshio / Terrence Brown.<br/>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

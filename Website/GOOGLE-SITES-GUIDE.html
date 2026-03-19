@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Sites Integration Guide — Edenverse Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .guide-block {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .guide-block.option-b { border-left-color: var(--red-light); }
+    .guide-block.option-c { border-left-color: #3b82f6; }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--gold);
+      color: var(--deep-black);
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-content h4 { margin-bottom: 0.4rem; font-size: 1rem; }
+    .step-content p  { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+    code, .code-block {
+      font-family: 'Courier New', monospace;
+      background: var(--dark-gray);
+      border: 1px solid var(--border);
+      color: var(--gold-light);
+      font-size: 0.85rem;
+    }
+
+    code { padding: 0.15rem 0.4rem; }
+
+    .code-block {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      margin: 1rem 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.7;
+    }
+
+    .option-badge {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid var(--gold-dark);
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .option-badge.b { border-color: var(--red); color: var(--red-light); }
+    .option-badge.c { border-color: #3b82f6; color: #60a5fa; }
+
+    .rec-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep-black);
+      font-family: var(--font-head);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      margin-left: 0.8rem;
+      vertical-align: middle;
+    }
+
+    .pro-con-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .pro-list, .con-list {
+      background: var(--dark-gray);
+      border: 1px solid var(--border);
+      padding: 1rem;
+    }
+
+    .pro-list h5 { color: #4ade80; font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .con-list h5 { color: var(--red-light); font-size: 0.8rem; margin-bottom: 0.5rem; }
+
+    .pro-list li, .con-list li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+      list-style: none;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .pro-list li::before { content: '✓'; position:absolute;left:0;color:#4ade80; }
+    .con-list li::before { content: '✗'; position:absolute;left:0;color:var(--red-light); }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .summary-table th, .summary-table td {
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .summary-table th {
+      background: var(--dark-gray);
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .summary-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .summary-table td { color: var(--text-muted); }
+    .summary-table .highlight td { color: var(--text-main); font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .pro-con-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">The Edenverse <span>/ Integration Guide</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">← Back to Site</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Publishing Strategy</p>
+      <h1>Google Sites Integration Guide</h1>
+      <div class="divider-sm"></div>
+      <p>Three methods for connecting your Edenverse HTML site to your existing Google Sites presence at <code style="background:transparent;border:none;color:var(--gold);">sites.google.com/view/theedenverse</code></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- OVERVIEW TABLE -->
+      <div class="section-header reveal">
+        <h2>Strategy Overview</h2>
+        <div class="divider-sm"></div>
+        <p class="muted">Three approaches. One recommendation.</p>
+      </div>
+
+      <table class="summary-table reveal">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Method</th>
+            <th>Custom Domain</th>
+            <th>Full Design Control</th>
+            <th>Difficulty</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>A ★</td>
+            <td>GitHub Pages (standalone)</td>
+            <td>Yes (free subdomain)</td>
+            <td>Full</td>
+            <td>Easy</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>GitHub Pages + Google Sites link</td>
+            <td>Yes</td>
+            <td>Full</td>
+            <td>Easy</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Embed HTML in Google Sites</td>
+            <td>No (Google URL)</td>
+            <td>Limited</td>
+            <td>Medium</td>
+            <td>Free</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="divider"></div>
+
+      <!-- ── OPTION A ── -->
+      <div class="guide-block reveal">
+        <span class="option-badge">Option A</span>
+        <span class="rec-badge">Recommended</span>
+        <h2>GitHub Pages — Standalone Site</h2>
+        <p style="color:var(--text-muted);margin:0.8rem 0 1.5rem;">Host the full Edenverse website on GitHub Pages for free. Your site gets a clean URL (<code>yourusername.github.io/edenverse</code>) and you keep complete design control. All 8 pages, the stylesheet, and all character images deploy as-is.</p>
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Create a GitHub account</h4>
+            <p>Go to <strong>github.com</strong> and sign up with a free account if you don't already have one. Use a username you're comfortable with — it will appear in your site URL.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Create a new repository</h4>
+            <p>Click the <strong>+</strong> icon → <strong>New repository</strong>. Name it <code>edenverse</code> (all lowercase). Set it to <strong>Public</strong>. Do NOT initialize with README. Click <strong>Create repository</strong>.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Upload your Website folder</h4>
+            <p>In the new empty repo, click <strong>uploading an existing file</strong>. Drag in all 9 files from your Website folder (<code>index.html</code>, all other <code>.html</code> files, <code>styles.css</code>), plus the entire <code>images/</code> folder. Click <strong>Commit changes</strong>.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Enable GitHub Pages</h4>
+            <p>In your repo, go to <strong>Settings → Pages</strong>. Under <em>Source</em>, select <strong>Deploy from a branch</strong>. Choose <strong>main</strong> branch, folder <strong>/ (root)</strong>. Click <strong>Save</strong>. Wait 2–5 minutes.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Your site is live</h4>
+            <p>GitHub Pages will display your URL: <code>https://yourusername.github.io/edenverse</code>. Every page, character image, and link will work immediately. Share this URL from your Google Sites page or Amazon KDP bio.</p>
+          </div>
+        </div>
+
+        <div class="pro-con-grid">
+          <div class="pro-list">
+            <h5>Advantages</h5>
+            <li>Free, permanent hosting</li>
+            <li>Full design — exactly what was built</li>
+            <li>All character images display correctly</li>
+            <li>Fast global CDN delivery</li>
+            <li>Easy to update: just re-upload files</li>
+          </div>
+          <div class="con-list">
+            <h5>Considerations</h5>
+            <li>URL includes GitHub username</li>
+            <li>Custom domain requires DNS setup (optional)</li>
+            <li>GitHub account required</li>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <p style="font-family:var(--font-head);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.5rem;">Optional: Connect a Custom Domain</p>
+          <p style="font-size:0.88rem;color:var(--text-muted);">If you own a domain (e.g. <code>theedenverse.com</code>), go to <strong>Settings → Pages → Custom domain</strong>, enter your domain, then add a CNAME record pointing to <code>yourusername.github.io</code> at your domain registrar. GitHub handles the HTTPS certificate automatically.</p>
+        </div>
+      </div>
+
+      <!-- ── OPTION B ── -->
+      <div class="guide-block option-b reveal">
+        <span class="option-badge b">Option B</span>
+        <h2>GitHub Pages + Google Sites Link Strategy</h2>
+        <p style="color:var(--text-muted);margin:0.8rem 0 1.5rem;">Keep your existing Google Sites page as the series hub, and use GitHub Pages as the destination for the full-featured HTML site. Link between them strategically.</p>
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Complete Option A first</h4>
+            <p>Get the GitHub Pages site live at <code>yourusername.github.io/edenverse</code>. This becomes the destination for your full site.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Update your Google Sites page</h4>
+            <p>In your Google Sites editor, add a prominent button or banner that links to the GitHub Pages site. Label it <strong>"Enter the Full Site"</strong> or <strong>"Full Series Website"</strong>. Google Sites handles the outbound link cleanly.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Cross-link both directions</h4>
+            <p>On the Edenverse HTML site, the <strong>Author page</strong> already links to <code>sites.google.com/view/theedenverse/home</code>. This creates a two-way ecosystem — visitors can move between both properties naturally.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Use Google Sites for blog/news only</h4>
+            <p>Consider simplifying the Google Sites page to serve as a lightweight announcement board, with the HTML site handling all the deep content (characters, lore, books). Visitors who want more will follow the link. Visitors who just want news stay on Google Sites.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── OPTION C ── -->
+      <div class="guide-block option-c reveal">
+        <span class="option-badge c">Option C</span>
+        <h2>Embed HTML Pages Directly in Google Sites</h2>
+        <p style="color:var(--text-muted);margin:0.8rem 0 1.5rem;">Google Sites supports embedding HTML via the <strong>Embed</strong> block. You can embed individual pages from your GitHub Pages site directly inside Google Sites pages using iframes. This lets you keep one URL while showing the full-featured content.</p>
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Deploy to GitHub Pages first (Option A)</h4>
+            <p>You need a live URL for each page before you can embed it.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>In Google Sites editor: Insert → Embed</h4>
+            <p>Click the <strong>Insert</strong> menu → <strong>Embed</strong>. Paste the full GitHub Pages URL for the page you want to embed (e.g. <code>https://yourusername.github.io/edenverse/characters.html</code>). Click <strong>Insert</strong>.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Resize the embed block to full-width</h4>
+            <p>Drag the embed block edges to full page width. Set height to at least <strong>900px</strong> to avoid scroll clipping. The Edenverse site is responsive and will adapt to the iframe dimensions.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Create one Google Sites page per section</h4>
+            <p>Recommended mapping:</p>
+            <div class="code-block">Google Sites "Books" page    → embed books.html
+Google Sites "Characters" page → embed characters.html
+Google Sites "Lore" page     → embed lore.html
+Google Sites "Contact" page  → embed contact.html</div>
+          </div>
+        </div>
+
+        <div class="pro-con-grid">
+          <div class="pro-list">
+            <h5>Advantages</h5>
+            <li>Single Google Sites URL</li>
+            <li>No separate hosting to manage</li>
+            <li>Familiar Google Sites editor</li>
+          </div>
+          <div class="con-list">
+            <h5>Considerations</h5>
+            <li>Double navigation bars visible</li>
+            <li>iframe scrolling can feel clunky</li>
+            <li>Mobile experience is inconsistent</li>
+            <li>Google may limit embed height/width</li>
+            <li>Not recommended for image-heavy pages</li>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RECOMMENDATION ── -->
+      <div class="lore-panel reveal">
+        <h3>The Recommendation</h3>
+        <p>Use <strong style="color:var(--gold);">Option B</strong> — GitHub Pages as the primary full site, Google Sites as the series hub. This gives you the best of both:</p>
+        <ul style="margin-top:1rem;padding-left:1.5rem;">
+          <li style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.6rem;">Your existing Google Sites audience finds the full HTML site through a clear, prominent link.</li>
+          <li style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.6rem;">The full site (characters, lore, books, contact) runs at full quality with no iframe degradation.</li>
+          <li style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.6rem;">Character images from your <code>Renamed_Assets</code> folder display at full resolution.</li>
+          <li style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.6rem;">The Amazon KDP links, contact form, and navigation all function as designed.</li>
+          <li style="color:var(--text-muted);font-size:0.9rem;">Both properties link to each other — cross-promoting the same series from two directions.</li>
+        </ul>
+      </div>
+
+      <!-- ── FILE CHECKLIST ── -->
+      <div class="guide-block reveal" style="margin-top:2rem;">
+        <h3>Upload Checklist for GitHub Pages</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.2rem;">Everything in your <code>Website\</code> folder must be uploaded to the repo root:</p>
+        <div class="code-block">✓  index.html
+✓  series.html
+✓  characters.html
+✓  lore.html
+✓  books.html
+✓  author.html
+✓  blog.html
+✓  contact.html
+✓  styles.css
+✓  images/
+    ✓  char-eva.jpg
+    ✓  char-ado.png
+    ✓  char-cole.png
+    ✓  char-sullivan.png
+    ✓  char-bors.jpeg
+    ✓  char-gabriel.png
+    ✓  char-eva-ado.png
+    ✓  char-eva-gown.jpg
+    ✓  char-ado-gold.png
+    ✓  char-sullivan-cyber.png
+    ✓  char-bors-military.png</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:1rem;margin-bottom:0;"><strong style="color:var(--text-main);">Important:</strong> The <code>images/</code> folder must be uploaded as a folder, not just its contents. In GitHub's drag-and-drop uploader, drag the entire <code>images</code> folder into the upload area — GitHub will preserve the folder structure automatically.</p>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;" class="reveal">
+        <a href="index.html" class="btn btn-primary">← Back to Edenverse Site</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        The Edenverse
+        <p>Integration &amp; Publishing Guide</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="author.html">Author</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; Yenshio / Terrence Brown.<br/>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
