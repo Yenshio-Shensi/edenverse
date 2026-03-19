@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the Author — The Edenverse</title>
+  <meta name="description" content="About Yenshio (Terrence Brown) — author of the Eden Philanthropic Foundation Series, published through Amazon KDP." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .author-page-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .author-photo-block {
+      position: sticky;
+      top: 5rem;
+    }
+
+    .author-photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, #1a1208 0%, #0d0d0d 100%);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .author-photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(201,168,76,0.1);
+      pointer-events: none;
+    }
+
+    .author-initial {
+      font-family: var(--font-head);
+      font-size: 5rem;
+      color: var(--gold-dark);
+      opacity: 0.3;
+      line-height: 1;
+      position: relative;
+    }
+
+    .author-name-block {
+      position: relative;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .author-pen-name {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .author-real-name {
+      font-family: var(--font-sub);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .author-social-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .author-social-links li a {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-head);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .author-social-links li a:hover {
+      border-color: var(--gold-dark);
+      color: var(--gold);
+      background: rgba(201,168,76,0.03);
+    }
+
+    .author-body h2 { margin-bottom: 1rem; }
+
+    .author-body p {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      line-height: 1.85;
+    }
+
+    .author-fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .author-fact {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .author-fact-label {
+      font-family: var(--font-head);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .author-fact-value {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    @media (max-width: 800px) {
+      .author-page-layout {
+        grid-template-columns: 1fr;
+      }
+      .author-photo-block { position: static; }
+      .author-photo-frame { max-width: 260px; margin: 0 auto 1.5rem; }
+      .author-social-links { flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">The Edenverse <span>/ EPF Series</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">The Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html" class="active">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">The Writer Behind the World</p>
+      <h1>About the Author</h1>
+      <div class="divider-sm"></div>
+    </div>
+  </section>
+
+  <!-- ── AUTHOR CONTENT ── -->
+  <section class="section">
+    <div class="container">
+      <div class="author-page-layout reveal">
+
+        <!-- SIDEBAR -->
+        <div class="author-photo-block">
+          <div class="author-photo-frame">
+            <span class="author-initial">Y</span>
+            <div class="author-name-block">
+              <p class="author-pen-name">Yenshio</p>
+              <p class="author-real-name">Terrence Brown</p>
+            </div>
+          </div>
+
+          <ul class="author-social-links">
+            <li>
+              <a href="https://sites.google.com/view/theedenverse/home" target="_blank" rel="noopener">
+                <span>🌐</span> Official Series Site
+              </a>
+            </li>
+            <li>
+              <a href="https://www.amazon.com/s?k=yenshio" target="_blank" rel="noopener">
+                <span>📚</span> Amazon Author Page
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                <span>✉</span> Contact &amp; Newsletter
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- BODY -->
+        <div class="author-body">
+          <p class="subheading" style="margin-bottom:1.5rem;">Yenshio / Terrence Brown</p>
+
+          <p>Yenshio is the pen name of Terrence Brown — author, IT consultant, and student at Berkeley College NYC. He writes in the space where science fiction meets fantasy and both refuse to behave: worlds that run on ancient compacts and modern institutions, on immortality and bureaucracy, on the question of what it actually costs to try to protect something for two thousand years.</p>
+
+          <p>The Eden Philanthropic Foundation Series is his primary creative project — an evolving mythology built around two immortal guardians, the empire they constructed, and the darkness that has always known where the light was coming from. It began as a single story and expanded, as these things do, into a world.</p>
+
+          <p>He is a self-published author working through Amazon KDP, which means the Edenverse is built and controlled on his own terms — the way it should be when the world in question is this specific, this layered, and this personal.</p>
+
+          <div class="author-fact-grid">
+            <div class="author-fact">
+              <span class="author-fact-label">Pen Name</span>
+              <span class="author-fact-value">Yenshio</span>
+            </div>
+            <div class="author-fact">
+              <span class="author-fact-label">Publisher</span>
+              <span class="author-fact-value">Amazon KDP</span>
+            </div>
+            <div class="author-fact">
+              <span class="author-fact-label">Genre</span>
+              <span class="author-fact-value">SF / Fantasy</span>
+            </div>
+            <div class="author-fact">
+              <span class="author-fact-label">Based In</span>
+              <span class="author-fact-value">New York</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom:1rem;">The Series</h3>
+          <p>The Edenverse currently comprises three published volumes — <em>A Garden Lost</em>, the anthology <em>The Travelers</em>, and <em>Gaia Project</em> — with Book Three, <em>The Host</em>, currently in active development. The world is deep enough to hold decades of stories, and that is, as Ado might say, entirely intentional.</p>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom:1rem;">On Writing the Edenverse</h3>
+          <p>The series was built from the inside out — characters first, world second, plot emerging from the collision of the two. Eva and Ado began as a single scene and refused to leave. Every major character in the series arrived with their own weight, their own specific way of speaking, their own history that had to be honored rather than bent to serve plot convenience.</p>
+          <p>The result is a world that rewards close reading and punishes impatience — not because it is deliberately obscure, but because it was built by someone who believes that the most important things are never said in a single line.</p>
+
+          <div class="divider"></div>
+
+          <div style="text-align:center;padding:2rem;background:var(--mid-gray);border:1px solid var(--border);">
+            <p class="subheading" style="margin-bottom:0.8rem;">Stay in the Loop</p>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.5rem;">Newsletter updates, release announcements, and development news from inside the Edenverse.</p>
+            <a href="contact.html" class="btn btn-primary">Sign Up for Updates</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        The Edenverse
+        <p>Eden Philanthropic Foundation Series</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; Yenshio / Terrence Brown.<br/>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

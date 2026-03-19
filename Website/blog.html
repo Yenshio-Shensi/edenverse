@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Updates — The Edenverse</title>
+  <meta name="description" content="Latest news, announcements, and development updates from the Eden Philanthropic Foundation Series by Yenshio." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-featured {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .blog-featured-label {
+      font-family: var(--font-head);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-featured h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-featured-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-head);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .blog-featured-meta span { color: var(--text-muted); }
+
+    .blog-category-label {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid;
+      margin-bottom: 0.8rem;
+    }
+
+    .cat-announcement { border-color: var(--gold-dark); color: var(--gold); }
+    .cat-development  { border-color: var(--red); color: var(--red-light); }
+    .cat-release      { border-color: var(--gold); color: var(--gold-light); }
+    .cat-lore         { border-color: var(--border); color: var(--text-muted); }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .post-card {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      transition: border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover { border-color: var(--gold-dark); }
+
+    .post-card h3 { font-size: 1.05rem; margin: 0.5rem 0 0.7rem; }
+
+    .post-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .post-date {
+      font-family: var(--font-head);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .post-read-more {
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold-dark);
+      padding-bottom: 1px;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+
+    .post-read-more:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+    .newsletter-cta {
+      background: linear-gradient(135deg, var(--dark-gray) 0%, var(--mid-gray) 100%);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold-dark);
+      padding: 3rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">The Edenverse <span>/ EPF Series</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">The Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html" class="active">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Updates from the Edenverse</p>
+      <h1>News &amp; Announcements</h1>
+      <div class="divider-sm"></div>
+      <p>Release updates, development news, lore expansions, and dispatches from inside the Foundation.</p>
+    </div>
+  </section>
+
+  <!-- ── CONTENT ── -->
+  <section class="section">
+    <div class="container">
+
+      <!-- FEATURED POST -->
+      <div class="blog-featured reveal">
+        <p class="blog-featured-label">★ Featured Announcement</p>
+        <span class="blog-category-label cat-development">Book 3 — In Progress</span>
+        <h2>The Host — Active Development Update</h2>
+        <div class="blog-featured-meta">
+          <span>March 2026</span>
+          <span>Development News</span>
+          <span>Yenshio</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.97rem;line-height:1.8;margin-bottom:1.5rem;">Book Three opens on May 12, 2031, at La Seine Musicale in Paris — and within its first pages, the rules of the series change. A Temple Corp ambush. A Necroshot wound on Ado's right shoulder that does not fully heal. A global $50,000,000 bounty on the Foundation's core team. From the opening chapter, <em>The Host</em> makes clear that what worked before is no longer guaranteed to work again.</p>
+        <p style="color:var(--text-muted);font-size:0.97rem;line-height:1.8;margin-bottom:1.5rem;">The Black House's six factions are fully coordinated for the first time. The Transposition Ritual — the Chairman's plan to bring Akirl into the physical world — is not coming. It has already begun. With 25 chapters in active development, the manuscript is currently the most structurally complex work in the series. Sign up below to be notified the moment it publishes.</p>
+        <a href="contact.html" class="btn btn-primary">Get Notified on Release</a>
+      </div>
+
+      <!-- POST GRID -->
+      <div class="post-grid reveal">
+
+        <!-- POST 1 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-release">Release</span>
+          <p class="post-date">2024</p>
+          <h3>Gaia Project Now Available on Amazon KDP</h3>
+          <p>Book Two opens November 9, 2030 in Oslo with an attack on Bors that forces the Foundation's hand. The Black House's Gaia Project — a plan to use Alpha energy as a bridge for Akirl — moves from classified intelligence to active crisis. The UN grants the Foundation international mandate. And a new member of the team is introduced under circumstances no one planned for. Available now in Kindle and paperback.</p>
+          <a href="books.html" class="post-read-more">View All Books →</a>
+        </div>
+
+        <!-- POST 2 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-release">Release</span>
+          <p class="post-date">2023</p>
+          <h3>The Travelers: "The Script Never Changes"</h3>
+          <p>Thirty-two vignettes. Three structural movements: 2031 Foundation operations, the Black House's hidden history, and six centuries of encounters stretching back to 80 AD. The Chronicles of the Edens is the Edenverse's deep archive — every thread that runs through the novels has its origin buried somewhere in these pages.</p>
+          <a href="books.html" class="post-read-more">View All Books →</a>
+        </div>
+
+        <!-- POST 3 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-lore">Lore</span>
+          <p class="post-date">Ongoing</p>
+          <h3>The Black House: Six Factions, One Chairman</h3>
+          <p>The Black House is not a single enemy. It is six coordinated factions under a Chairman whose identity remains unknown even to Eva and Ado. The Oni Hegemony. The Coterie of Sorcerers. The Illuminati/Black Templars and their Temple Corp military arm. The Caliphate. The Chaos Bureaucracy. And the Night Lords of Eastern Europe, who introduced themselves to the Foundation through a 2028 CIA station massacre in Prague.</p>
+          <a href="lore.html" class="post-read-more">Explore the Lore →</a>
+        </div>
+
+        <!-- POST 4 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-lore">World Building</span>
+          <p class="post-date">Ongoing</p>
+          <h3>Voice in the Edenverse: How Characters Sound</h3>
+          <p>Eva speaks Italian to Ado and Latin to the old things that still understand it. Ado's sentences go incomplete when he is doing his most precise thinking — the thought already done before the words catch up. Cole's Cockney inflections sharpen under stress and soften around the team. Sullivan's professional register is so exact it becomes its own form of emotion. Every character in the Edenverse is an instrument in a specific key.</p>
+          <a href="characters.html" class="post-read-more">Meet the Characters →</a>
+        </div>
+
+        <!-- POST 5 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-announcement">Announcement</span>
+          <p class="post-date">March 2026</p>
+          <h3>Official Edenverse Website Now Live</h3>
+          <p>Full character profiles, world lore including the complete Black House faction breakdown, chapter lists for all published volumes, and direct Amazon KDP links. The site is built to grow alongside the series — with The Host's development updates added as the manuscript progresses.</p>
+          <a href="index.html" class="post-read-more">Visit Homepage →</a>
+        </div>
+
+        <!-- POST 6 -->
+        <div class="post-card">
+          <span class="blog-category-label cat-development">Development</span>
+          <p class="post-date">Active — 2026</p>
+          <h3>The Host: Paris, Necroshot, and a $50M Bounty</h3>
+          <p>Chapter structure is 25 chapters deep. The manuscript opens on a Thursday night in Paris where the Black House's most direct military operation to date leaves Ado with a wound that Eva's healing cannot fully close. The Transposition Ritual is not a threat on the horizon. It has already started. Sign up to be notified the moment it publishes.</p>
+          <a href="contact.html" class="post-read-more">Sign Up for Updates →</a>
+        </div>
+
+      </div>
+
+      <!-- NEWSLETTER CTA -->
+      <div class="newsletter-cta reveal">
+        <p class="subheading" style="margin-bottom:0.8rem;">Stay Connected to the Edenverse</p>
+        <h3 style="margin-bottom:1rem;">Subscribe to the Newsletter</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;max-width:500px;margin:0 auto 1.5rem;">Release announcements, development updates, lore deep dives, and first access to new content. Delivered directly to your inbox. No spam. No noise.</p>
+        <a href="contact.html" class="btn btn-primary">Sign Up Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        The Edenverse
+        <p>Eden Philanthropic Foundation Series</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; Yenshio / Terrence Brown.<br/>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
