@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Lore, The EPF Verse</title>
+  <meta name="description" content="The lore of the EPF Verse: the Eden Philanthropic Foundation, the Black House's six factions, Akirl, the Oni, and the hidden history behind every war." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .lore-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .faction-leader-block {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.25s;
+    }
+
+    .faction-leader-block:hover { border-color: var(--gold-dark); }
+
+    .faction-leader-icon {
+      width: 100px;
+      height: 100px;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--gold-dark);
+      flex-shrink: 0;
+    }
+
+    .faction-leader-block.red-side .faction-leader-icon { color: var(--red-light); }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 53px;
+      top: 0;
+      bottom: -2rem;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item:last-child::before { display: none; }
+
+    .timeline-date {
+      text-align: right;
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 0.2rem;
+    }
+
+    .timeline-content {
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--gold-dark);
+    }
+
+    .timeline-content h4 { font-size: 1rem; margin-bottom: 0.4rem; }
+    .timeline-content p  { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+
+    .bh-faction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .bh-faction-card {
+      background: var(--mid-gray);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      padding: 1.5rem;
+      transition: border-color 0.25s;
+    }
+
+    .bh-faction-card:hover { border-color: var(--red-light); }
+
+    .bh-faction-card h4 {
+      font-size: 0.95rem;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .bh-faction-card .faction-region {
+      font-family: var(--font-sub);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--red-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .bh-faction-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .lore-two-col { grid-template-columns: 1fr; }
+      .bh-faction-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">The EPF Verse</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">The Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html" class="active">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">The World Behind the World</p>
+      <h1>World Lore</h1>
+      <div class="divider-sm"></div>
+      <p>The EPF Verse runs on hidden history. Behind every institution, there is an older one. Behind every power structure, a more ancient compact. And behind every war, something older than war itself.</p>
+    </div>
+  </section>
+
+  <!-- ── THE FOUNDATION ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">The Visible Shield</p>
+        <h2>The Eden Philanthropic Foundation</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>To the world, the <strong style="color:var(--gold);">Eden Philanthropic Foundation</strong> is the largest and most impactful private charitable organization in human history. It funds hospitals, schools, clean energy initiatives, and conflict resolution programs on every inhabited continent. Its annual budget dwarfs most national governments. Its board members include former heads of state, Nobel laureates, and titans of industry.</p>
+        <p>None of that is untrue. But it is incomplete.</p>
+        <p>The Foundation was built by Eva and Adamocles Eden over centuries of careful, patient institution-building — not out of altruism alone, but out of necessity. Two immortals who understand the real forces shaping human civilization need leverage, infrastructure, and reach. The Foundation provides all three. Its headquarters occupies the Flatiron Building in New York City — public floors above, five secure sub-levels below.</p>
+
+        <div class="lore-quote">
+          "We did not build it to be thanked. We built it to be positioned. There is a difference."
+          <br/><span style="font-size:0.8rem;color:var(--text-dim);font-style:normal;margin-top:0.5rem;display:block;">— Adamocles Eden</span>
+        </div>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel">
+            <h3>Public Operations</h3>
+            <p>Healthcare infrastructure, educational endowments, humanitarian response, energy transition funding. The Foundation's public record is flawless. It wins awards. It sets standards. It is, by every measurable metric, exactly what it says it is.</p>
+          </div>
+          <div class="lore-panel red-accent">
+            <h3>Black Operations</h3>
+            <p>A private intelligence network. A global field operations division. Classified response units capable of engaging Oni threats directly. And a deep archive of human history that no government knows exists.</p>
+          </div>
+        </div>
+
+        <div class="lore-two-col" style="margin-top:1.5rem;">
+          <div class="lore-panel">
+            <h3>The Phoenix Protocol</h3>
+            <p>The Foundation's emergency revival system — a NanoTank technology combining state-of-the-art nanite medicine with Eva's spiritual healing capabilities. It has a single confirmed success: the resurrection of Bors Adamsen in Book Two, Chapter Five, "Breath of Life." The Protocol's limits are unknown. Its failure conditions are something Eva refuses to discuss.</p>
+          </div>
+          <div class="lore-panel">
+            <h3>The Bastion</h3>
+            <p>A former clandestine agency now fully under Foundation control, housing the world's most extensive collection of supernatural artifacts and classified research. Its seizure set the Black House back an estimated seventy-five years — which means the Black House has been trying to reclaim it ever since.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AKIRL ── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">The Thing Behind the Black House</p>
+        <h2>Akirl</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p><strong style="color:var(--red-light);">Akirl</strong> is not a faction. It is not a leader. It is the reason every faction exists. A cosmic horror entity — the existential malice of Fear itself — it resides in a dimensional rift at a location the Foundation's intelligence designates as Red Mountain. It cannot enter the physical world on its own. It requires a vessel.</p>
+        <p>The Black House's entire generational project — the Gaia Protocol, the manipulations of Book Two, and now the Transposition Ritual of Book Three — is a centuries-long effort to solve that single problem: how to bring Akirl here. The Chairman maintains a direct connection to Akirl that predates recorded history. What was promised in exchange for that connection has never been confirmed.</p>
+
+        <div class="lore-quote">
+          "It does not think. It does not want. It simply is — the oldest weight in the dark, waiting for something to carry it through."
+        </div>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel red-accent">
+            <h3>The Transposition Ritual</h3>
+            <p>The Black House's master plan for Book Three: manifest Akirl in physical form using a human vessel — designated the Dark Muse — as the anchor point. The ritual is already in motion as The Host begins. Stopping it requires the Foundation to dismantle six coordinated factions simultaneously while protecting a target they cannot move.</p>
+          </div>
+          <div class="lore-panel red-accent">
+            <h3>The Gaia Protocol (Book Two)</h3>
+            <p>The Black House's prior attempt to solve the same problem: use Alpha energy as the bridge for Akirl's manifestation. It failed because the Foundation intervened. But its failure accelerated the Transposition timeline — what was theoretical became operational the moment Gaia Project was stopped.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE BLACK HOUSE ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">The Invisible Opposition</p>
+        <h2>The Black House</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>The <strong style="color:var(--red-light);">Black House</strong> is the Foundation's oldest and most persistent adversary — a shadow institution of comparable age, opposite philosophy, and superior patience for patience's sake. Where the Foundation builds systems, the Black House corrupts them. Where the Foundation protects, the Black House positions.</p>
+        <p>Its supreme authority is the Chairman: a figure of unknown origin whose voice carries dimensional resonance and whose grip on the six factions is maintained through the Geas — a magical compulsion that creates absolute loyalty while preserving the illusion of free will. Breaking it costs power. Resisting it costs more. The Chairman's true identity and origin remain unknown even to Eva and Ado.</p>
+
+        <div class="lore-quote">
+          "The Black House does not need to win today. It needs to still be playing when we make our first mistake."
+        </div>
+      </div>
+
+      <!-- Six Factions Grid -->
+      <div class="bh-faction-grid reveal">
+
+        <div class="bh-faction-card">
+          <h4>1. Oni Hegemony</h4>
+          <p class="faction-region">Asia — Japan, Korea</p>
+          <p><strong style="color:var(--gold);">Leader:</strong> Il'Shihane (Red Kensei) — currently defecting. Former leader Lord Kargane: banished.</p>
+          <p>Shapeshifting goblinoid warriors with 2,700 years of accumulated alchemy. Developed "the Rot" — a Void corruption that spreads through Dharmic meridians. Status in Book Three: civil war between redemption and loyalist factions.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Assassination</span><span class="tag">Alchemy</span><span class="tag">Zero Effect</span></div>
+        </div>
+
+        <div class="bh-faction-card">
+          <h4>2. Coterie of Sorcerers</h4>
+          <p class="faction-region">Eastern Europe / Russia</p>
+          <p><strong style="color:var(--gold);">Leader:</strong> Archmage Angelique Dominia Lumina — a position passed through a ritual that consumes its predecessor.</p>
+          <p>Powerful ritualists, necromancers, and summoners of outer planar entities. Operating in Prague in Book Three, running divination support for the Transposition and manipulating a grieving artist as a secondary ritual target.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Ritual Magic</span><span class="tag">Necromancy</span><span class="tag">Dimensional Portals</span></div>
+        </div>
+
+        <div class="bh-faction-card">
+          <h4>3. Illuminati / Black Templars</h4>
+          <p class="faction-region">Americas / United Kingdom</p>
+          <p><strong style="color:var(--gold);">Military Arm:</strong> Temple Corp — the most technologically advanced faction. Elite soldiers in matte-black powered armor with crimson triple-lensed optics.</p>
+          <p>Developed the Necroshot: void-infused ammunition that targets Dharmic meridians. Commander Lucius led the Paris ambush on Ado in Book Three's opening. The Black House's primary direct military threat.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Necroshot</span><span class="tag">Powered Armor</span><span class="tag">Banshee Rifles</span></div>
+        </div>
+
+        <div class="bh-faction-card">
+          <h4>4. The Caliphate</h4>
+          <p class="faction-region">Middle East</p>
+          <p><strong style="color:var(--gold);">Leader:</strong> Iblis, Caliph — a powerful Efreet described as "a torrent of fire and flame that takes the form of a man." His true form stands ten feet tall.</p>
+          <p>Specialists in pain, grief, and soul contracts. The Eternal Kiln requires constant soul-fuel — every contract Iblis writes is ultimately feeding something older than desire. Cooperates with the Black House only when interests align.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Soul Contracts</span><span class="tag">Efreet</span><span class="tag">Eternal Kiln</span></div>
+        </div>
+
+        <div class="bh-faction-card">
+          <h4>5. Chaos Bureaucracy</h4>
+          <p class="faction-region">China</p>
+          <p><strong style="color:var(--gold);">Leader:</strong> Matriarch Xuanyan — pure logical entropy. Detached. Academic cruelty.</p>
+          <p>Masters of misinformation, digital manipulation, and bureaucratic curse-working. Their signature: making the Foundation distrust its own intelligence. Responsible for the São Paulo building collapses and the false financial trails that obscure the Transposition timeline.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Misinformation</span><span class="tag">Paradox Logic</span><span class="tag">São Paulo</span></div>
+        </div>
+
+        <div class="bh-faction-card">
+          <h4>6. Night Lords</h4>
+          <p class="faction-region">Eastern Europe</p>
+          <p><strong style="color:var(--gold);">Leader:</strong> Gehrud Trellir, Lich Necromancer of Grey Bones. Special ops unit: the Dark 6, led by Sword Master Lord Johann Ruttlieber.</p>
+          <p>Liches, vampires, necromancers, and revenants. Responsible for the 2028 Prague CIA station massacre. Currently infiltrating European governments through vampire shapeshifters. Trellir's homunculi have compromised Foundation HQ surveillance.</p>
+          <div class="char-tags" style="margin-top:0.8rem;"><span class="tag tag-red">Undead</span><span class="tag">Necromancy</span><span class="tag">Government Infiltration</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ONI FACTIONS ── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">A Hegemony Divided</p>
+        <h2>The Oni Factions</h2>
+        <div class="divider-sm"></div>
+        <p class="muted" style="max-width:650px;margin:1rem auto 0;">The Oni Hegemony was once a single Black House faction. In Book Three, Il'Shihane's defection fractures it into two opposing forces — one seeking redemption, one seeking revenge. The Foundation now navigates both.</p>
+      </div>
+
+      <!-- FACTION 1 — IL'SHIHANE REDEEMERS -->
+      <div class="faction-leader-block reveal">
+        <div class="faction-leader-icon">一</div>
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:0.3rem;">Il'Shihane's Redeemer Faction</h3>
+          <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.85rem;color:var(--gold);margin-bottom:0.8rem;">Philosophy: Law &amp; Peace — Status: Independent Ally / Eden Foundation</p>
+          <p style="font-size:0.9rem;color:var(--text-muted);">Led by <strong style="color:var(--gold);">Il'Shihane</strong>, the Red Kensei — former supreme leader of the Oni Hegemony. His defection from the Black House is not impulsive: it is the culmination of centuries uncovering the truth of how Lord Kargane corrupted his people. Il'Shihane seeks to restore the Oni to what they were before the Rot — honorable, lawful warriors. He approaches the Foundation not as a supplicant but as a peer, offering 2,700 years of accumulated intelligence on the Black House in exchange for a chance to earn what cannot be demanded: forgiveness.</p>
+          <div class="lore-quote" style="margin-top:1rem;font-size:0.9rem;">"The shame of our ancestors burns bright in this offering."<br/><span style="font-style:normal;font-size:0.78rem;color:var(--text-dim);margin-top:0.4rem;display:block;">— Il'Shihane, from the Oni Data Crystal message</span></div>
+          <div class="char-tags" style="margin-top:1rem;">
+            <span class="tag tag-gold">Foundation Ally</span>
+            <span class="tag">Law / Peace</span>
+            <span class="tag tag-gold">Il'Shihane</span>
+            <span class="tag">Redemption Arc</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FACTION 2 — JINKOU LOYALISTS -->
+      <div class="faction-leader-block red-side reveal">
+        <div class="faction-leader-icon" style="font-size:1.3rem;">⚔</div>
+        <div>
+          <h3 style="color:var(--gold);margin-bottom:0.3rem;">Jinkou's Faction</h3>
+          <p class="char-title" style="font-family:var(--font-sub);font-style:italic;font-size:0.85rem;color:var(--red-light);margin-bottom:0.8rem;">Philosophy: Rage &amp; Vengeance — Status: Aligned with The Black House</p>
+          <p style="font-size:0.9rem;color:var(--text-muted);">Led by <strong style="color:var(--gold);">Jinkou</strong> — Il'Shihane's former loyal disciple and cousin, now his most dangerous opponent. Jinkou's faction rejects redemption as weakness and views Il'Shihane's alliance with the Foundation as the ultimate betrayal of Oni honor. They remain aligned with the Black House and the Chairman, fighting to preserve the Hegemony's war footing and carry the Transposition ritual to completion. Jinkou is not merely loyal to the Black House. He is loyal to the version of the Oni that Il'Shihane is trying to bury.</p>
+          <div class="char-tags" style="margin-top:1rem;">
+            <span class="tag tag-red">Black House Aligned</span>
+            <span class="tag tag-red">Rage / Vengeance</span>
+            <span class="tag">Jinkou</span>
+            <span class="tag tag-red">Loyalist Opposition</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ADO'S LEGACY: ONI GENOCIDE & THE BLACK GHOST ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">The Wound That Started Everything</p>
+        <h2>The Oni Genocide &amp; The Black Ghost</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>The Oni factions' hatred of Eva and Ado is not arbitrary. It has a name, a history, and a body count. At a point in antiquity — the exact date classified even within the Foundation's own archives — Adamocles Eden committed what the supernatural world now calls the Oni Genocide: a systematic and devastating campaign against the Oni populations who threatened to destabilize the human civilizations he and Eva had spent centuries protecting.</p>
+        <p>The campaign was not impulsive. It was deliberate, methodical, and successful. Which is precisely what made it unforgettable. In the aftermath, the legend of <strong style="color:var(--gold);">The Black Ghost</strong> was born — the name given by surviving Oni communities to the paired terror of Ado's combat persona and Eva's spiritual warfare. The name endures. The reputation it describes has never been allowed to fade.</p>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel red-accent">
+            <h3>What Ado Carries</h3>
+            <p>The Oni Genocide was not a mistake in Ado's accounting — it was a necessary act executed with the moral clarity of someone who has watched civilizations collapse when supernatural threats go unanswered. That he carries it without apology does not mean he carries it lightly. The Black Ghost is the version of him that the Oni remember. It is also the version Eva has never stopped watching for.</p>
+          </div>
+          <div class="lore-panel">
+            <h3>What the Oni Remember</h3>
+            <p>The Oni Hegemony faction, originally honorable warriors, was corrupted over 2,700 years by Lord Kargane into what it became under Black House influence. The hidden truth revealed when Il'Shihane sought redemption: the path to corruption began with the genocide's aftermath, with survivors who had no framework left for existing outside of retaliation. The Black Ghost did not create the Black House. But it created the wound the Black House grew inside.</p>
+          </div>
+        </div>
+
+        <div class="lore-quote" style="margin-top:2rem;">
+          "The Black Ghost, The Legend of Ado and Eva after Oni Genocide — a terrifying reputation among supernatural communities that has never entirely been a legend."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE NECROSHOT & THE ROT ── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">Weapons of the Void</p>
+        <h2>Necroshot &amp; The Rot</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>The most significant tactical development of the modern conflict is the <strong style="color:var(--red-light);">Necroshot</strong> — void-infused ammunition developed by Temple Corp using 2,700 years of Oni alchemical knowledge, specifically the Rot: the Void corruption that Lord Kargane cultivated within the Oni Hegemony as a spiritual weapon. Necroshot is the first recorded weapon capable of creating wounds that do not fully heal in a Pre-Pangean Alpha.</p>
+        <p>In the opening pages of <em>The Host</em>, the Paris ambush inflicts a Necroshot wound on Ado's left shoulder. The silver scar that results — a permanent mark that Eva tends with daily spiritual acupuncture and golden alloy needles — is the series' first visible proof that its protagonists are not invulnerable. It changes the nature of the conflict permanently.</p>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel red-accent">
+            <h3>The Rot</h3>
+            <p>A Void corruption developed by Kargane and cultivated within the Oni Hegemony over millennia. It spreads through the Dharmic meridians — the spiritual energy pathways of the body — and cannot be removed by conventional means. It is the biological weapon that made Necroshot possible, and its existence is one of the most dangerous pieces of supernatural knowledge currently in Black House hands.</p>
+          </div>
+          <div class="lore-panel">
+            <h3>Spiritual Acupuncture</h3>
+            <p>Eva's treatment for Ado's Necroshot wound: golden alloy needles inscribed with pre-language symbols, administered daily to flush Void corruption from the Dharmic meridians. A technique older than medicine. An act that has become, over the weeks of Book Three, something neither of them discusses directly — an intimacy that the wound forced into their routine before either of them chose it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE DOCTRINE OF THE PUPPETEER ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">Night Lords, Operating Philosophy</p>
+        <h2>The Doctrine of the Puppeteer</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>Gehrud Trellir's operating philosophy is simpler and colder than it first sounds: <strong style="color:var(--red-light);">the Night Lords pull the strings of everyone under their influence, and anyone who tries to act of their own accord gets removed.</strong> It is not rhetoric. It is a stated order of operations, confirmed active as of Chapter 9 of <em>The Host, Part 2</em> — and it comes with a literal chain of command.</p>
+        <p>Ruttlieber, Trellir's oldest disciple, has his own way of putting it — he calls the ones who resist "puppets who thought they could be a real boy." No cruelty in the delivery. Just correction. A puppet that starts believing it's a real boy has forgotten what it is, and the doctrine exists to remind it.</p>
+
+        <div class="lore-quote">
+          "The Doctrine of the Puppeteer, Count Kyr. Move Dark 6 into position. Activate the Thralls in the designated territories. Cut any strings that require cutting. You have your orders."
+          <br/><span style="font-size:0.8rem;color:var(--text-dim);font-style:normal;margin-top:0.5rem;display:block;">— Gehrud Trellir, to Count Vladislav Kyr</span>
+        </div>
+
+        <p>Kyr — the vampire lord who commands Dark 6 in the field — answers in kind: <em>"Es wird geschehen, Meister."</em> It will be done, Master. The language isn't decoration. Thralls, strings, cutting — the entire command structure of the Night Lords is built around the metaphor, because for Trellir it isn't a metaphor. It's how he actually sees the board.</p>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel red-accent">
+            <h3>The Doctrine Has Targets</h3>
+            <p>Trellir ordered Dark 6 to remove <strong style="color:var(--gold);">Helena Engel</strong>, Germany's Security Secretary and one of Eva Eden's own allies — a direct move against the Foundation's international government network, and one neither Helena nor the Foundation knows is coming. Poland's Prime Minister sits on the same list. The doctrine doesn't need much reason. Resistance is reason enough.</p>
+          </div>
+          <div class="lore-panel red-accent">
+            <h3>Homunculi: The Doctrine Made Physical</h3>
+            <p>Every mouse-shaped construct in a Foundation vent, every humanoid relic still working a legacy post, exists to put Trellir <em>inside the room</em> before anyone knows to look for him. From the Foundation HQ compromise to the São Paulo "two fruits" trap — where his own surveillance turned on his own Black House allies, Iblis and Lumina alike — the doctrine doesn't distinguish between enemy and ally. It distinguishes between string and puppet.</p>
+          </div>
+        </div>
+
+        <div class="lore-quote" style="margin-top:1.5rem;font-size:0.9rem;">
+          "It seems my manipulation has borne two fruits from the tree."
+          <br/><span style="font-style:normal;font-size:0.78rem;color:var(--text-dim);margin-top:0.4rem;display:block;">— Gehrud Trellir, on the São Paulo reveal</span>
+        </div>
+      </div>
+
+      <div class="section-header reveal" style="margin-top:3rem;">
+        <p class="subheading">Not the Only Doctrine</p>
+        <h3 style="font-size:1.4rem;">Three Factions, Three Theories of Control</h3>
+        <div class="divider-sm"></div>
+        <p class="muted" style="max-width:650px;margin:1rem auto 0;">The Puppeteer isn't unique. It's one of three parallel, genuinely coherent philosophies running the Black House's major factions — puppetry, dependency, and contract. None of them need to force anything at first. That's what makes all three worse than simple domination would be.</p>
+      </div>
+
+      <div class="bh-faction-grid reveal">
+        <div class="bh-faction-card">
+          <h4>Trellir's Doctrine of the Puppeteer</h4>
+          <p class="faction-region">Night Lords</p>
+          <p>Control through unseen strings. Resistance gets cut, not punished.</p>
+        </div>
+        <div class="bh-faction-card">
+          <h4>Brimscar's Doctrine of Willing Chains</h4>
+          <p class="faction-region">Temple Corp</p>
+          <p><em>"They will come into the future by choice, chains, or screaming servitude."</em> The tool is offered freely first — it looks like nothing but progress. Dependency does the real work next. Force is the last resort, only when the first two fail.</p>
+        </div>
+        <div class="bh-faction-card">
+          <h4>Iblis's Eternal Kiln</h4>
+          <p class="faction-region">Caliphate</p>
+          <p>A cosmic furnace that runs on souls, fed by contracts freely signed. Every "yes" he collects is fuel for something that was never mortal.</p>
+        </div>
+      </div>
+
+      <div style="max-width:800px;margin:2.5rem auto 0;" class="reveal">
+        <p style="color:var(--text-muted);font-size:0.95rem;">Trellir doesn't need brute force because he's already inside the room, already holding the string, long before anyone thinks to check the vents. By the time you notice you're being watched, the trap has already closed — not because he moved fast, but because you never knew you were part of the puppet show to begin with.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRAGUE ARC ── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="subheading">Where the Modern Conflict Ignited</p>
+        <h2>The Prague Arc</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <p>Prague is where the modern conflict in the EPF Verse ignites. A city with a particular density of hidden history — one of the oldest continuously inhabited capitals in Europe — it becomes the location of the operation that forces Eva and Ado out of carefully maintained obscurity in <em>A Garden Lost</em>.</p>
+        <p>The Prague arc establishes the series' key tensions: the Foundation's dual nature as public institution and covert operation; the Oni factions' increasing coordination; and the personal costs of a life lived in perpetual strategic concealment. It is also where the field team — Cole, Sullivan, Bors, and the others — are first assembled under crisis conditions. The arc's events also draw Mac into the Foundation's orbit: the 2028 CIA station massacre is the first official record of Night Lords activity in Central Europe, and it is Mac's account of it that convinces Eva the threat has reached a threshold she can no longer ignore.</p>
+
+        <div class="lore-two-col" style="margin-top:2rem;">
+          <div class="lore-panel">
+            <h3>What Begins Here</h3>
+            <p>A single compromised operation. The first visible crack in the Foundation's security. And a revelation about the Black House's penetration of the Foundation's closest circles that changes everything about how the Edens understand their own organization.</p>
+          </div>
+          <div class="lore-panel red-accent">
+            <h3>What It Costs</h3>
+            <p>The Prague arc is not bloodless. It establishes early that the EPF Verse does not protect its characters out of sentimentality, and even the oldest, most prepared guardians in the world can be caught off guard by someone who has been patient enough.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUICK REFERENCE ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Quick Lore Reference</h2>
+        <div class="divider-sm"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;" class="reveal">
+        <div class="faction-card">
+          <p class="faction-icon">⚗️</p>
+          <h3>Pre-Pangean Alphas</h3>
+          <p>Immortal beings who predate the breakup of Pangaea. Eva and Ado are among the last known. Their origin is the series' oldest mystery. Words of Creation are etched into their souls.</p>
+        </div>
+        <div class="faction-card red-side">
+          <p class="faction-icon">🕷</p>
+          <h3>The Black House</h3>
+          <p>Shadow institution as old as the Foundation. Six factions under one Chairman. Master plan: the Transposition Ritual. Ultimate goal: bring Akirl into the physical world.</p>
+        </div>
+        <div class="faction-card">
+          <p class="faction-icon">🌿</p>
+          <h3>Phoenix Protocol</h3>
+          <p>The Foundation's emergency revival system using NanoTank nanite technology and Eva's spiritual healing. One confirmed success: Bors Adamsen. Its limits are not yet known.</p>
+        </div>
+        <div class="faction-card red-side">
+          <p class="faction-icon">🔥</p>
+          <h3>The Eternal Kiln</h3>
+          <p>Iblis's cosmic furnace — a supernatural construct that requires constant soul-fuel. The true purpose behind all Caliphate contracts. Every deal feeds something that was never mortal.</p>
+        </div>
+        <div class="faction-card">
+          <p class="faction-icon">🔗</p>
+          <h3>The Telepathic Bond</h3>
+          <p>Eva and Ado share a psychic connection that predates language. It is their greatest strength and, in certain tactical scenarios, their greatest exposure. "Together they are free."</p>
+        </div>
+        <div class="faction-card red-side">
+          <p class="faction-icon">🏛</p>
+          <h3>The 200-Year Separation</h3>
+          <p>A forced separation that tested everything Eva and Ado built together. The wound it left defines their modern relationship in ways they rarely discuss directly.</p>
+        </div>
+        <div class="faction-card red-side">
+          <p class="faction-icon">⚫</p>
+          <h3>The Black Ghost</h3>
+          <p>The legend of Ado and Eva in the supernatural world — the name given after the Oni Genocide. A reputation so old it has become mythology. In Book Three, the mythology is waking up.</p>
+        </div>
+        <div class="faction-card">
+          <p class="faction-icon">🐺</p>
+          <h3>Alpha Wolves</h3>
+          <p>Long-tooth (male) and Pink-nose (female) — intelligent supernatural wolves rescued from an Oni facility in Book Two. Full members of the Foundation family. Not pets. Not weapons. Family.</p>
+        </div>
+        <div class="faction-card">
+          <p class="faction-icon">🚀</p>
+          <h3>Bucephalus</h3>
+          <p>The Foundation's EO-Maglev APC. Mach 3 capable, fully submersible, stealth-equipped mobile command center. Piloted by Timothy. Named, correctly, after a horse that deserved more credit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        The EPF Verse
+        <p>Eden Philanthropic Foundation Series</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="author.html">Author</a></li>
+        <li><a href="blog.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; Yenshio / Terrence Brown.<br/>All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
