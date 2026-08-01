@@ -33,6 +33,14 @@
       position: relative;
       overflow: hidden;
     }
+    .book-cover-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
     .book-large-cover::before {
       content: '';
       position: absolute;
@@ -203,12 +211,8 @@
       <!-- ── BOOK 1 ── -->
       <div class="book-full-entry reveal">
         <div class="book-large-cover">
+          <img src="images/book-garden-lost.jpg" alt="A Garden Lost cover" class="book-cover-img" />
           <div class="cover-frame"></div>
-          <div class="cover-text">
-            <p class="cover-label">Book One · EPF Verse</p>
-            <p class="book-title-display">A Garden<br/>Lost</p>
-            <p class="cover-author">Yenshio</p>
-          </div>
         </div>
         <div class="book-full-text">
           <p class="book-series-label">Book One of the Eden Philanthropic Foundation Series</p>
@@ -260,12 +264,8 @@
       <!-- ── ANTHOLOGY ── -->
       <div class="book-full-entry reversed reveal">
         <div class="book-large-cover">
+          <img src="images/book-travelers.jpg" alt="The Travelers cover" class="book-cover-img" />
           <div class="cover-frame"></div>
-          <div class="cover-text">
-            <p class="cover-label">Anthology · EPF Verse</p>
-            <p class="book-title-display">The<br/>Travelers</p>
-            <p class="cover-author">Yenshio</p>
-          </div>
         </div>
         <div class="book-full-text">
           <p class="book-series-label">The Chronicles of The Edens — Anthology</p>
@@ -333,12 +333,9 @@
       <!-- ── BOOK 2 ── -->
       <div class="book-full-entry reveal">
         <div class="book-large-cover">
+          <!-- Interim cover — author has a redesign planned -->
+          <img src="images/book-gaia-project.jpg" alt="Gaia Project cover" class="book-cover-img" />
           <div class="cover-frame"></div>
-          <div class="cover-text">
-            <p class="cover-label">Book Two · EPF Verse</p>
-            <p class="book-title-display">Gaia<br/>Project</p>
-            <p class="cover-author">Yenshio</p>
-          </div>
         </div>
         <div class="book-full-text">
           <p class="book-series-label">Book Two of the Eden Philanthropic Foundation Series</p>
@@ -399,12 +396,8 @@
       <!-- ── BOOK 3, PART 1 ── -->
       <div class="book-full-entry reversed reveal">
         <div class="book-large-cover">
+          <img src="images/book-host-part1.jpg" alt="The Host, Part 1 cover" class="book-cover-img" />
           <div class="cover-frame"></div>
-          <div class="cover-text">
-            <p class="cover-label">Book Three, Part One</p>
-            <p class="book-title-display">The<br/>Host</p>
-            <p class="cover-author">Yenshio</p>
-          </div>
         </div>
         <div class="book-full-text">
           <p class="book-series-label">Book Three, Part One of the Eden Philanthropic Foundation Series</p>
@@ -489,12 +482,8 @@
       <!-- ── THE BEGINNING (PREQUEL) ── -->
       <div class="book-full-entry reversed reveal">
         <div class="book-large-cover">
+          <img src="images/book-beginning.jpg" alt="Eva and Ado: The Beginning cover" class="book-cover-img" />
           <div class="cover-frame"></div>
-          <div class="cover-text">
-            <p class="cover-label">Prequel · EPF Verse</p>
-            <p class="book-title-display">Eva and Ado<br/>The Beginning</p>
-            <p class="cover-author">Yenshio</p>
-          </div>
         </div>
         <div class="book-full-text">
           <p class="book-series-label">Prequel to the Eden Philanthropic Foundation Series</p>
